@@ -163,6 +163,20 @@ button {
 
 /* ---------- photo placeholder blocks ---------- */
 
+/*
+  A cluster holds one or more .photo-frame children for the same chapter.
+  1 photo  -> a single frame, centered.
+  2 photos -> a primary frame with a smaller one pinned over its corner.
+  3+ photos -> a clean grid mosaic (first photo spans the top row).
+  Add or remove .photo-frame elements in the markup; the layout adapts.
+*/
+
+.photo-cluster {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+}
+
 .photo-frame {
   position: relative;
   width: 100%;
@@ -170,6 +184,46 @@ button {
   background: #e9e6da;
   overflow: hidden;
   border: 1px solid var(--hairline);
+}
+
+.photo-cluster:has(.photo-frame:nth-child(2)):not(:has(.photo-frame:nth-child(3))) {
+  padding-bottom: 14%;
+}
+
+.photo-cluster:has(.photo-frame:nth-child(2)):not(:has(.photo-frame:nth-child(3)))
+  .photo-frame:nth-child(1) {
+  width: 82%;
+}
+
+.photo-cluster:has(.photo-frame:nth-child(2)):not(:has(.photo-frame:nth-child(3)))
+  .photo-frame:nth-child(2) {
+  position: absolute;
+  right: -8%;
+  bottom: 0;
+  width: 46%;
+  aspect-ratio: 1 / 1;
+  border: 4px solid var(--bg);
+  box-shadow: 0 14px 30px rgba(54, 43, 30, 0.16);
+}
+
+.photo-cluster:has(.photo-frame:nth-child(3)) {
+  padding-bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(10px, 1.5vw, 16px);
+}
+
+.photo-cluster:has(.photo-frame:nth-child(3)) .photo-frame {
+  position: static;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--hairline);
+  box-shadow: none;
+}
+
+.photo-cluster:has(.photo-frame:nth-child(3)) .photo-frame:nth-child(1) {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 10;
 }
 
 .photo-frame img {
