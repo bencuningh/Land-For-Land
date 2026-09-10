@@ -88,6 +88,7 @@
 
   document.addEventListener("keydown", (e) => {
     if (isAnimating) return;
+    if (document.activeElement && document.activeElement.isContentEditable) return;
     if (e.key === "ArrowRight" && config[currentIndex].showForward) {
       navigate(currentIndex + 1, "forward");
     } else if (e.key === "ArrowLeft" && config[currentIndex].showBack) {
@@ -112,6 +113,11 @@
     "touchend",
     (e) => {
       if (touchStartX === null) return;
+      if (document.activeElement && document.activeElement.isContentEditable) {
+        touchStartX = null;
+        touchStartY = null;
+        return;
+      }
       const dx = e.changedTouches[0].clientX - touchStartX;
       const dy = e.changedTouches[0].clientY - touchStartY;
       touchStartX = null;
