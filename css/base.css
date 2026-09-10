@@ -1,0 +1,221 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* visible keyboard focus, everywhere */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.hairline {
+  border: none;
+  border-top: 1px solid var(--hairline);
+  margin: 0;
+  width: 100%;
+}
+
+/* ---------- fixed chrome: shared across all views ---------- */
+
+.app {
+  position: relative;
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.mark,
+.progress {
+  position: fixed;
+  top: clamp(18px, 4vw, 32px);
+  z-index: 20;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+}
+
+.mark {
+  left: var(--control-gutter);
+}
+
+.progress {
+  right: var(--control-gutter);
+}
+
+.mark.is-visible,
+.progress.is-visible {
+  opacity: 1;
+}
+
+.nav-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+  width: clamp(44px, 8vw, 56px);
+  height: clamp(44px, 8vw, 56px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms ease, background 200ms ease, border-color 200ms ease, visibility 0s linear 300ms;
+}
+
+.nav-arrow.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 300ms ease, background 200ms ease, border-color 200ms ease;
+}
+
+.nav-arrow:hover {
+  background: rgba(54, 43, 30, 0.06);
+}
+
+.nav-arrow svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.nav-arrow--back {
+  left: var(--control-gutter);
+}
+
+.nav-arrow--forward {
+  right: var(--control-gutter);
+}
+
+/* ---------- photo placeholder blocks ---------- */
+
+.photo-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: #e9e6da;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-frame .photo-fallback {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  text-align: center;
+  padding: 1.5em;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(54, 43, 30, 0.05),
+    rgba(54, 43, 30, 0.05) 1px,
+    transparent 1px,
+    transparent 12px
+  );
+}
+
+.photo-frame.is-missing .photo-fallback {
+  display: flex;
+}
+
+.photo-frame.is-missing img {
+  display: none;
+}
+
+.photo-fallback-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.photo-fallback-hint {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--ink-muted);
+  opacity: 0.7;
+}

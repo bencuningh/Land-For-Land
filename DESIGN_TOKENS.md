@@ -34,15 +34,16 @@ things you click.
    ("ROLE / LOCATION / START / FORMAT"). Wide, even letterforms, heavily
    tracked out, uppercase. This is the page's real signature — not a generic
    geometric sans.
-   **Confirmed via devtools network request: Space Mono** (bold for the H1,
-   regular for eyebrows/labels), loaded from fonts.googleapis.com /
-   fonts.gstatic.com.
+   **Confirmed via devtools network request: Space Mono**, weights 400/700
+   (bold for the H1, regular for eyebrows/labels), loaded from
+   fonts.googleapis.com / fonts.gstatic.com.
 
 3. **Humanist sans** — body paragraphs and data values ("Late Founder",
    "ASAP", etc). Regular weight, sentence case, comfortable line-height,
    muted-gray color, no tracking.
-   **Confirmed via devtools network request: DM Sans** (not Inter — corrected
-   after seeing the actual font file request, `dmsans/v17`).
+   **Confirmed via devtools network request: DM Sans**, weights 300/400/500
+   (not Inter — corrected after seeing the actual font file request,
+   `dmsans/v17`).
 
 ## Letter-spacing
 

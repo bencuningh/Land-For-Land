@@ -1,0 +1,38 @@
+/*
+  Design tokens sampled from land-for-land.com/careers.
+  See DESIGN_TOKENS.md at the repo root for sourcing notes.
+*/
+
+:root {
+  /* color */
+  --bg: #f2f1eb;
+  --ink: #362b1e;
+  --ink-muted: #726c5e;
+  --hairline: #dad7cc;
+  --accent: #a8471f;
+  --accent-ink: #f7f0e6;
+
+  /* type */
+  --font-mono: "Space Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-serif: "Fraunces", Georgia, "Iowan Old Style", "Times New Roman", serif;
+
+  --tracking-eyebrow: 0.18em;
+  --tracking-heading: 0.04em;
+  --tracking-wordmark: 0.08em;
+
+  /* rhythm */
+  --content-max: 1180px;
+  --edge-gutter: clamp(20px, 6vw, 96px);
+  --control-gutter: clamp(10px, 4vw, 40px);
+
+  /* motion */
+  --swoosh-duration: 700ms;
+  --swoosh-ease: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --swoosh-duration: 1ms;
+  }
+}
