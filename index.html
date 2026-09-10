@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Let me tell you — a story for Land for Land</title>
+  <meta
+    name="description"
+    content="An application for the General Manager Operating Cofounder role at Land for Land, told as a short interactive story instead of a cover letter."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&family=Space+Mono:ital,wght@0,400;0,700&family=Fraunces:ital,wght@0,500;1,500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/chapters.css" />
+</head>
+<body>
+  <div class="app" id="app">
+    <!-- persistent chrome -->
+    <div class="mark" aria-hidden="true">For Land for Land</div>
+    <div class="progress" aria-hidden="true"></div>
+    <div class="nav-live visually-hidden" role="status" aria-live="polite"></div>
+
+    <button type="button" class="nav-arrow nav-arrow--back" aria-label="Previous">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4L7 12L15 20" /></svg>
+    </button>
+    <button type="button" class="nav-arrow nav-arrow--forward" aria-label="Next">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4L17 12L9 20" /></svg>
+    </button>
+
+    <!-- 0: opening -->
+    <section
+      class="view view--opening"
+      id="view-opening"
+      data-state="active"
+      data-back="false"
+      data-forward="false"
+      data-mark="false"
+      data-announce="Introduction"
+    >
+      <div class="view-inner">
+        <p class="opening-line">Let me tell you&hellip;</p>
+        <button type="button" class="play-button" data-goto="1" aria-label="Begin the story">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4L20 12L6 20Z" /></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- 1: Citizen Capital -->
+    <section
+      class="view chapter"
+      id="view-citizen-capital"
+      data-back="true"
+      data-forward="true"
+      data-progress="01 / 05"
+      data-announce="Chapter 1 of 5, Citizen Capital"
+    >
+      <div class="view-inner">
+        <div class="chapter-text">
+          <p class="chapter-eyebrow eyebrow">
+            <span class="chapter-index">01 —</span> Analyst, Citizen Capital
+          </p>
+          <h2 class="chapter-title">Citizen Capital</h2>
+          <p class="chapter-story">
+            My first real seat at the table. Watching founders take a raw idea and force it into
+            existence — that&rsquo;s where I fell in love with startups, with operators, with the
+            specific kind of person who builds something from nothing. I didn&rsquo;t want to just
+            watch it from the investor side for long.
+          </p>
+        </div>
+        <div class="chapter-photo photo-frame">
+          <img data-photo="citizen-capital" src="assets/photos/citizen-capital.jpg" alt="" loading="lazy" />
+          <div class="photo-fallback">
+            <span class="photo-fallback-label">Photo &mdash; citizen-capital.jpg</span>
+            <span class="photo-fallback-hint">Drop a photo into assets/photos/ with this filename</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2: Redesk -->
+    <section
+      class="view chapter"
+      id="view-redesk"
+      data-back="true"
+      data-forward="true"
+      data-progress="02 / 05"
+      data-announce="Chapter 2 of 5, Redesk"
+    >
+      <div class="view-inner">
+        <div class="chapter-text">
+          <p class="chapter-eyebrow eyebrow">
+            <span class="chapter-index">02 —</span> Co-building, alongside ESSEC
+          </p>
+          <h2 class="chapter-title">Redesk</h2>
+          <p class="chapter-story">
+            Building Redesk in parallel with my studies, with Jules, Th&eacute;o and Titouan &mdash;
+            four of us, no playbook. We had to invent our own processes from scratch: how to recycle
+            and resell old office furniture without losing money on every piece. Unglamorous,
+            detail-obsessed work, and it&rsquo;s where I learned that a good idea is worthless without
+            the operations to carry it.
+          </p>
+        </div>
+        <div class="chapter-photo photo-frame">
+          <img data-photo="redesk" src="assets/photos/redesk.jpg" alt="" loading="lazy" />
+          <div class="photo-fallback">
+            <span class="photo-fallback-label">Photo &mdash; redesk.jpg</span>
+            <span class="photo-fallback-hint">Drop a photo into assets/photos/ with this filename</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3: Joko -->
+    <section
+      class="view chapter"
+      id="view-joko"
+      data-back="true"
+      data-forward="true"
+      data-progress="03 / 05"
+      data-announce="Chapter 3 of 5, Joko"
+    >
+      <div class="view-inner">
+        <div class="chapter-text">
+          <p class="chapter-eyebrow eyebrow">
+            <span class="chapter-index">03 —</span> Account Executive, Joko
+          </p>
+          <h2 class="chapter-title">Joko</h2>
+          <p class="chapter-story">
+            Joko is where I became a machine. Nicolas, one of the co-founders, mentored me directly,
+            and gave me a rigor and a drive I didn&rsquo;t know I had in me. AI-driven process
+            automation, sold and explained every day, sharpened how I think about turning ambition
+            into something operational.
+          </p>
+        </div>
+        <div class="chapter-photo photo-frame">
+          <img data-photo="joko" src="assets/photos/joko.jpg" alt="" loading="lazy" />
+          <div class="photo-fallback">
+            <span class="photo-fallback-label">Photo &mdash; joko.jpg</span>
+            <span class="photo-fallback-hint">Drop a photo into assets/photos/ with this filename</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4: Sport, always -->
+    <section
+      class="view chapter"
+      id="view-sport"
+      data-back="true"
+      data-forward="true"
+      data-progress="04 / 05"
+      data-announce="Chapter 4 of 5, Sport, always"
+    >
+      <div class="view-inner">
+        <div class="chapter-text">
+          <p class="chapter-eyebrow eyebrow">
+            <span class="chapter-index">04 —</span> Never stopped moving
+          </p>
+          <h2 class="chapter-title">Sport, always</h2>
+          <p class="chapter-story">
+            Through all of it, sport never paused. Rugby as a kid. Then marathons, pushing a disabled
+            runner alongside me. A half Ironman in Carcans. The T24, more than once. A swimrun
+            through the Gorges du Verdon. Endurance sport taught me the same thing every one of those
+            finish lines did: standards don&rsquo;t lower just because it gets hard.
+          </p>
+        </div>
+        <div class="chapter-photo photo-frame">
+          <img data-photo="sport" src="assets/photos/sport.jpg" alt="" loading="lazy" />
+          <div class="photo-fallback">
+            <span class="photo-fallback-label">Photo &mdash; sport.jpg</span>
+            <span class="photo-fallback-hint">Drop a photo into assets/photos/ with this filename</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5: Phoenix Races -->
+    <section
+      class="view chapter"
+      id="view-phoenix-races"
+      data-back="true"
+      data-forward="true"
+      data-progress="05 / 05"
+      data-announce="Chapter 5 of 5, Phoenix Races"
+    >
+      <div class="view-inner">
+        <div class="chapter-text">
+          <p class="chapter-eyebrow eyebrow">
+            <span class="chapter-index">05 —</span> Founder, Phoenix Races
+          </p>
+          <h2 class="chapter-title">Phoenix Races</h2>
+          <p class="chapter-story">
+            Somewhere in all those start lines, I fell in love with the events themselves, not just
+            the racing. So I built my own &mdash; a backyard ultra, from a borrowed field to a real,
+            growing race. Phoenix Races chases the same thing Land for Land does: high expectations,
+            real craft, something exclusive because it&rsquo;s genuinely good, never because
+            it&rsquo;s exclusive for its own sake.
+          </p>
+        </div>
+        <div class="chapter-photo photo-frame">
+          <img data-photo="phoenix-races" src="assets/photos/phoenix-races.jpg" alt="" loading="lazy" />
+          <div class="photo-fallback">
+            <span class="photo-fallback-label">Photo &mdash; phoenix-races.jpg</span>
+            <span class="photo-fallback-hint">Drop a photo into assets/photos/ with this filename</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6: final -->
+    <section
+      class="view view--final"
+      id="view-final"
+      data-back="true"
+      data-forward="false"
+      data-announce="Closing"
+    >
+      <div class="view-inner">
+        <p class="final-line">I want to be part of your team.</p>
+        <a href="#view-plan" class="plan-cta" data-goto="7">
+          <span>See my plan for Land for Land</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12H20M14 6L20 12L14 18" /></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- 7: plan -->
+    <section
+      class="view view--plan"
+      id="view-plan"
+      data-back="true"
+      data-forward="false"
+      data-announce="My plan for Land for Land"
+    >
+      <div class="view-inner">
+        <div class="plan-header">
+          <span class="eyebrow">A plan, not a pitch</span>
+          <h2 class="plan-title">Where I&rsquo;d start at Land for Land</h2>
+          <p class="plan-intro">
+            Five pillars &mdash; the same ones from your own listing. Not everything I&rsquo;d do,
+            just where I&rsquo;d put the first ninety days.
+          </p>
+        </div>
+
+        <div class="plan-grid">
+          <article class="pillar">
+            <span class="pillar-number">01</span>
+            <h3 class="pillar-name">Guest experience</h3>
+            <ol class="pillar-list">
+              <li><span class="n">1.</span><span><b>Walk every guest journey myself</b>, end to end, before asking anyone else to fix it.</span></li>
+              <li><span class="n">2.</span><span>Turn recurring small complaints into fixed standards within days &mdash; the discipline a race needs on the morning of the start.</span></li>
+              <li><span class="n">3.</span><span>Build a feedback loop that reaches me directly, not filtered through three layers of reporting.</span></li>
+            </ol>
+          </article>
+
+          <article class="pillar">
+            <span class="pillar-number">02</span>
+            <h3 class="pillar-name">Operations</h3>
+            <ol class="pillar-list">
+              <li><span class="n">1.</span><span>Write the playbooks that don&rsquo;t exist yet &mdash; the ones Redesk taught me you invent from scratch when there&rsquo;s no template.</span></li>
+              <li><span class="n">2.</span><span>Put real unit economics behind every decision, sized right for a business this stage, not built for a bigger one.</span></li>
+              <li><span class="n">3.</span><span>Run a tight weekly rhythm &mdash; clear owners, clear numbers &mdash; the way Joko trained into me.</span></li>
+            </ol>
+          </article>
+
+          <article class="pillar">
+            <span class="pillar-number">03</span>
+            <h3 class="pillar-name">Product / commerce</h3>
+            <ol class="pillar-list">
+              <li><span class="n">1.</span><span>Treat the offer like a race course: designed on purpose, tested by me first.</span></li>
+              <li><span class="n">2.</span><span>Find the highest-leverage commerce moves early &mdash; pricing, packaging, upsell &mdash; and ship the first version fast.</span></li>
+              <li><span class="n">3.</span><span>Iterate in public with guests, the way I grew Phoenix Races from a borrowed field into a real race.</span></li>
+            </ol>
+          </article>
+
+          <article class="pillar">
+            <span class="pillar-number">04</span>
+            <h3 class="pillar-name">Brand</h3>
+            <ol class="pillar-list">
+              <li><span class="n">1.</span><span>Protect &ldquo;exclusive because it&rsquo;s good,&rdquo; never &ldquo;exclusive for its own sake&rdquo; &mdash; the standard I built Phoenix Races on.</span></li>
+              <li><span class="n">2.</span><span>Make every operational decision legible in the brand &mdash; guests should feel the standards, not just read about them.</span></li>
+              <li><span class="n">3.</span><span>Say no to anything that grows the brand faster than it grows trust.</span></li>
+            </ol>
+          </article>
+
+          <article class="pillar">
+            <span class="pillar-number">05</span>
+            <h3 class="pillar-name">Business</h3>
+            <ol class="pillar-list">
+              <li><span class="n">1.</span><span>Get to a clear, honest read on unit economics fast &mdash; no vanity metrics.</span></li>
+              <li><span class="n">2.</span><span>Bring the financial and operational rigor a real cofounder owes the business, the kind Nicolas modeled for me.</span></li>
+              <li><span class="n">3.</span><span>Build Land for Land into something desirable <b>and</b> profitable &mdash; not a trade-off between the two.</span></li>
+            </ol>
+          </article>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/nav.js" defer></script>
+</body>
+</html>
