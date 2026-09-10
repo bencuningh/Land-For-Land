@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/chapters.css" />
+  <link rel="stylesheet" href="css/edit.css" />
 </head>
 <body>
   <div class="app" id="app">
@@ -34,6 +35,18 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4L17 12L9 20" /></svg>
     </button>
 
+    <!-- edit mode -->
+    <button type="button" class="edit-toggle" aria-pressed="false" aria-label="Edit text on this page" title="Edit text (Ctrl/Cmd+E)">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 20l1-4.5L15.5 5 19 8.5 8.5 19 4 20z" />
+      </svg>
+    </button>
+    <div class="edit-bar">
+      <button type="button" class="edit-export">Export HTML</button>
+      <button type="button" class="edit-reset">Reset text</button>
+    </div>
+    <div class="edit-saved-badge">Saved</div>
+
     <!-- 0: opening -->
     <section
       class="view view--opening"
@@ -45,7 +58,7 @@
       data-announce="Introduction"
     >
       <div class="view-inner">
-        <p class="opening-line">Let me tell you a story&hellip;</p>
+        <p class="opening-line" data-edit-key="opening-line">Let me tell you a story&hellip;</p>
         <button type="button" class="play-button" data-goto="1" aria-label="Begin the story">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4L20 12L6 20Z" /></svg>
         </button>
@@ -64,10 +77,10 @@
       <div class="view-inner">
         <div class="chapter-text">
           <p class="chapter-eyebrow eyebrow">
-            <span class="chapter-index">01 -</span> Analyst, Citizen Capital
+            <span class="chapter-index">01 -</span> <span data-edit-key="ch1-eyebrow">Analyst, Citizen Capital</span>
           </p>
-          <h2 class="chapter-title">Citizen Capital</h2>
-          <p class="chapter-story">
+          <h2 class="chapter-title" data-edit-key="ch1-title">Citizen Capital</h2>
+          <p class="chapter-story" data-edit-key="ch1-story">
             My first real seat at the table. Watching founders take a raw idea and force it into
             existence, that&rsquo;s where I fell in love with startups, with operators, with the
             specific kind of person who builds something from nothing. I didn&rsquo;t want to just
@@ -107,10 +120,10 @@
       <div class="view-inner">
         <div class="chapter-text">
           <p class="chapter-eyebrow eyebrow">
-            <span class="chapter-index">02 -</span> Co-building, alongside ESSEC
+            <span class="chapter-index">02 -</span> <span data-edit-key="ch2-eyebrow">Co-building, alongside ESSEC</span>
           </p>
-          <h2 class="chapter-title">Redesk</h2>
-          <p class="chapter-story">
+          <h2 class="chapter-title" data-edit-key="ch2-title">Redesk</h2>
+          <p class="chapter-story" data-edit-key="ch2-story">
             Building Redesk in parallel with my studies, with Jules, Th&eacute;o and Titouan: four of
             us, no playbook. We had to invent our own processes from scratch: how to recycle
             and resell old office furniture without losing money on every piece. Unglamorous,
@@ -151,10 +164,10 @@
       <div class="view-inner">
         <div class="chapter-text">
           <p class="chapter-eyebrow eyebrow">
-            <span class="chapter-index">03 -</span> Account Executive, Joko
+            <span class="chapter-index">03 -</span> <span data-edit-key="ch3-eyebrow">Account Executive, Joko</span>
           </p>
-          <h2 class="chapter-title">Joko</h2>
-          <p class="chapter-story">
+          <h2 class="chapter-title" data-edit-key="ch3-title">Joko</h2>
+          <p class="chapter-story" data-edit-key="ch3-story">
             Joko is where I became a machine. Nicolas, one of the co-founders, mentored me directly,
             and gave me a rigor and a drive I didn&rsquo;t know I had in me. AI-driven process
             automation, sold and explained every day, sharpened how I think about turning ambition
@@ -194,18 +207,18 @@
       <div class="view-inner">
         <div class="chapter-text">
           <p class="chapter-eyebrow eyebrow">
-            <span class="chapter-index">04 -</span> Never stopped moving
+            <span class="chapter-index">04 -</span> <span data-edit-key="ch4-eyebrow">Never stopped moving</span>
           </p>
-          <h2 class="chapter-title">Sport, always</h2>
-          <p class="chapter-story">Through all of it, sport never paused.</p>
+          <h2 class="chapter-title" data-edit-key="ch4-title">Sport, always</h2>
+          <p class="chapter-story" data-edit-key="ch4-story-1">Through all of it, sport never paused.</p>
           <ul class="chapter-list">
-            <li>Rugby as a kid</li>
-            <li>Marathons, pushing a disabled runner alongside me</li>
-            <li>A half Ironman in Carcans</li>
-            <li>The T24, more than once</li>
-            <li>A swimrun through the Gorges du Verdon</li>
+            <li data-edit-key="ch4-list-1">Rugby as a kid</li>
+            <li data-edit-key="ch4-list-2">Marathons, pushing a disabled runner alongside me</li>
+            <li data-edit-key="ch4-list-3">A half Ironman in Carcans</li>
+            <li data-edit-key="ch4-list-4">The T24, more than once</li>
+            <li data-edit-key="ch4-list-5">A swimrun through the Gorges du Verdon</li>
           </ul>
-          <p class="chapter-story">
+          <p class="chapter-story" data-edit-key="ch4-story-2">
             Endurance sport taught me the same thing every one of those finish lines did: standards
             don&rsquo;t lower just because it gets hard.
           </p>
@@ -250,10 +263,10 @@
       <div class="view-inner">
         <div class="chapter-text">
           <p class="chapter-eyebrow eyebrow">
-            <span class="chapter-index">05 -</span> Founder, Phoenix Races
+            <span class="chapter-index">05 -</span> <span data-edit-key="ch5-eyebrow">Founder, Phoenix Races</span>
           </p>
-          <h2 class="chapter-title">Phoenix Races</h2>
-          <p class="chapter-story">
+          <h2 class="chapter-title" data-edit-key="ch5-title">Phoenix Races</h2>
+          <p class="chapter-story" data-edit-key="ch5-story">
             Somewhere in all those start lines, I fell in love with the events themselves, not just
             the racing. So I built my own: a backyard ultra, from a borrowed field to a real,
             growing race. Phoenix Races chases the same thing Land for Land does: high expectations,
@@ -291,9 +304,9 @@
       data-announce="Closing"
     >
       <div class="view-inner">
-        <p class="final-line">I want to be part of your team.</p>
+        <p class="final-line" data-edit-key="final-line">I want to be part of your team.</p>
         <a href="#view-plan" class="plan-cta" data-goto="7">
-          <span>See my plan for Land for Land</span>
+          <span data-edit-key="plan-cta-label">See my plan for Land for Land</span>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12H20M14 6L20 12L14 18" /></svg>
         </a>
       </div>
@@ -309,9 +322,9 @@
     >
       <div class="view-inner">
         <div class="plan-header">
-          <span class="eyebrow">A plan, not a pitch</span>
-          <h2 class="plan-title">Where I&rsquo;d start at Land for Land</h2>
-          <p class="plan-intro">
+          <span class="eyebrow" data-edit-key="plan-eyebrow">A plan, not a pitch</span>
+          <h2 class="plan-title" data-edit-key="plan-title">Where I&rsquo;d start at Land for Land</h2>
+          <p class="plan-intro" data-edit-key="plan-intro">
             Five pillars, the same ones from your own listing. Not everything I&rsquo;d do,
             just where I&rsquo;d put the first ninety days.
           </p>
@@ -320,51 +333,51 @@
         <div class="plan-grid">
           <article class="pillar">
             <span class="pillar-number">01</span>
-            <h3 class="pillar-name">Guest experience</h3>
+            <h3 class="pillar-name" data-edit-key="pillar-1-name">Guest experience</h3>
             <ol class="pillar-list">
-              <li><span class="n">1.</span><span><b>Walk every guest journey myself</b>, end to end, before asking anyone else to fix it.</span></li>
-              <li><span class="n">2.</span><span>Turn recurring small complaints into fixed standards within days, the discipline a race needs on the morning of the start.</span></li>
-              <li><span class="n">3.</span><span>Build a feedback loop that reaches me directly, not filtered through three layers of reporting.</span></li>
+              <li><span class="n">1.</span><span data-edit-key="pillar-1-item-1"><b>Walk every guest journey myself</b>, end to end, before asking anyone else to fix it.</span></li>
+              <li><span class="n">2.</span><span data-edit-key="pillar-1-item-2">Turn recurring small complaints into fixed standards within days, the discipline a race needs on the morning of the start.</span></li>
+              <li><span class="n">3.</span><span data-edit-key="pillar-1-item-3">Build a feedback loop that reaches me directly, not filtered through three layers of reporting.</span></li>
             </ol>
           </article>
 
           <article class="pillar">
             <span class="pillar-number">02</span>
-            <h3 class="pillar-name">Operations</h3>
+            <h3 class="pillar-name" data-edit-key="pillar-2-name">Operations</h3>
             <ol class="pillar-list">
-              <li><span class="n">1.</span><span>Write the playbooks that don&rsquo;t exist yet: the ones Redesk taught me you invent from scratch when there&rsquo;s no template.</span></li>
-              <li><span class="n">2.</span><span>Put real unit economics behind every decision, sized right for a business this stage, not built for a bigger one.</span></li>
-              <li><span class="n">3.</span><span>Run a tight weekly rhythm (clear owners, clear numbers), the way Joko trained into me.</span></li>
+              <li><span class="n">1.</span><span data-edit-key="pillar-2-item-1">Write the playbooks that don&rsquo;t exist yet: the ones Redesk taught me you invent from scratch when there&rsquo;s no template.</span></li>
+              <li><span class="n">2.</span><span data-edit-key="pillar-2-item-2">Put real unit economics behind every decision, sized right for a business this stage, not built for a bigger one.</span></li>
+              <li><span class="n">3.</span><span data-edit-key="pillar-2-item-3">Run a tight weekly rhythm (clear owners, clear numbers), the way Joko trained into me.</span></li>
             </ol>
           </article>
 
           <article class="pillar">
             <span class="pillar-number">03</span>
-            <h3 class="pillar-name">Product / commerce</h3>
+            <h3 class="pillar-name" data-edit-key="pillar-3-name">Product / commerce</h3>
             <ol class="pillar-list">
-              <li><span class="n">1.</span><span>Treat the offer like a race course: designed on purpose, tested by me first.</span></li>
-              <li><span class="n">2.</span><span>Find the highest-leverage commerce moves early (pricing, packaging, upsell) and ship the first version fast.</span></li>
-              <li><span class="n">3.</span><span>Iterate in public with guests, the way I grew Phoenix Races from a borrowed field into a real race.</span></li>
+              <li><span class="n">1.</span><span data-edit-key="pillar-3-item-1">Treat the offer like a race course: designed on purpose, tested by me first.</span></li>
+              <li><span class="n">2.</span><span data-edit-key="pillar-3-item-2">Find the highest-leverage commerce moves early (pricing, packaging, upsell) and ship the first version fast.</span></li>
+              <li><span class="n">3.</span><span data-edit-key="pillar-3-item-3">Iterate in public with guests, the way I grew Phoenix Races from a borrowed field into a real race.</span></li>
             </ol>
           </article>
 
           <article class="pillar">
             <span class="pillar-number">04</span>
-            <h3 class="pillar-name">Brand</h3>
+            <h3 class="pillar-name" data-edit-key="pillar-4-name">Brand</h3>
             <ol class="pillar-list">
-              <li><span class="n">1.</span><span>Protect &ldquo;exclusive because it&rsquo;s good,&rdquo; never &ldquo;exclusive for its own sake.&rdquo; That&rsquo;s the standard I built Phoenix Races on.</span></li>
-              <li><span class="n">2.</span><span>Make every operational decision legible in the brand: guests should feel the standards, not just read about them.</span></li>
-              <li><span class="n">3.</span><span>Say no to anything that grows the brand faster than it grows trust.</span></li>
+              <li><span class="n">1.</span><span data-edit-key="pillar-4-item-1">Protect &ldquo;exclusive because it&rsquo;s good,&rdquo; never &ldquo;exclusive for its own sake.&rdquo; That&rsquo;s the standard I built Phoenix Races on.</span></li>
+              <li><span class="n">2.</span><span data-edit-key="pillar-4-item-2">Make every operational decision legible in the brand: guests should feel the standards, not just read about them.</span></li>
+              <li><span class="n">3.</span><span data-edit-key="pillar-4-item-3">Say no to anything that grows the brand faster than it grows trust.</span></li>
             </ol>
           </article>
 
           <article class="pillar">
             <span class="pillar-number">05</span>
-            <h3 class="pillar-name">Business</h3>
+            <h3 class="pillar-name" data-edit-key="pillar-5-name">Business</h3>
             <ol class="pillar-list">
-              <li><span class="n">1.</span><span>Get to a clear, honest read on unit economics fast, no vanity metrics.</span></li>
-              <li><span class="n">2.</span><span>Bring the financial and operational rigor a real cofounder owes the business, the kind Nicolas modeled for me.</span></li>
-              <li><span class="n">3.</span><span>Build Land for Land into something desirable <b>and</b> profitable, not a trade-off between the two.</span></li>
+              <li><span class="n">1.</span><span data-edit-key="pillar-5-item-1">Get to a clear, honest read on unit economics fast, no vanity metrics.</span></li>
+              <li><span class="n">2.</span><span data-edit-key="pillar-5-item-2">Bring the financial and operational rigor a real cofounder owes the business, the kind Nicolas modeled for me.</span></li>
+              <li><span class="n">3.</span><span data-edit-key="pillar-5-item-3">Build Land for Land into something desirable <b>and</b> profitable, not a trade-off between the two.</span></li>
             </ol>
           </article>
         </div>
@@ -372,6 +385,23 @@
     </section>
   </div>
 
+  <div class="export-overlay">
+    <div class="export-panel">
+      <h3>Export updated HTML</h3>
+      <p>
+        Copy this or download it as <code>index.html</code>, then commit it back to the repo to
+        make your edits permanent. Edits also stay saved in this browser until you reset them.
+      </p>
+      <textarea class="export-textarea" readonly spellcheck="false"></textarea>
+      <div class="export-actions">
+        <button type="button" class="export-close">Close</button>
+        <button type="button" class="export-copy">Copy</button>
+        <button type="button" class="export-download primary">Download index.html</button>
+      </div>
+    </div>
+  </div>
+
   <script src="js/nav.js" defer></script>
+  <script src="js/edit.js" defer></script>
 </body>
 </html>

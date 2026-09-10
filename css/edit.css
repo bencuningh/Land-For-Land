@@ -1,0 +1,223 @@
+/* ---------- edit mode ---------- */
+
+.edit-toggle {
+  position: fixed;
+  right: var(--control-gutter);
+  bottom: clamp(18px, 5vw, 32px);
+  z-index: 40;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid var(--hairline);
+  background: var(--bg);
+  color: var(--ink-muted);
+  transition: color 200ms ease, border-color 200ms ease, background 200ms ease;
+}
+
+.edit-toggle:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.edit-toggle svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.app.edit-mode .edit-toggle {
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.edit-bar {
+  position: fixed;
+  right: var(--control-gutter);
+  bottom: clamp(66px, 10vw, 82px);
+  z-index: 40;
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.app.edit-mode .edit-bar {
+  display: flex;
+}
+
+.edit-bar button {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+  padding: 0.6em 1em;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: border-color 200ms ease, color 200ms ease;
+}
+
+.edit-bar button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.app.edit-mode [data-edit-key] {
+  cursor: text;
+  border-radius: 3px;
+  outline: 1px dashed var(--hairline);
+  outline-offset: 6px;
+  transition: outline-color 150ms ease, background 150ms ease;
+}
+
+.app.edit-mode [data-edit-key]:hover {
+  outline-color: var(--ink-muted);
+}
+
+.app.edit-mode [data-edit-key]:focus {
+  outline: 1px dashed var(--accent);
+  outline-offset: 6px;
+  background: rgba(168, 71, 31, 0.06);
+}
+
+.edit-saved-badge {
+  position: fixed;
+  right: var(--control-gutter);
+  bottom: clamp(18px, 5vw, 32px);
+  z-index: 41;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  padding: 0.5em 0.9em;
+  border-radius: 999px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 200ms ease, transform 200ms ease;
+  pointer-events: none;
+}
+
+.edit-saved-badge.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- export overlay ---------- */
+
+.export-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(38, 38, 32, 0.4);
+}
+
+.export-overlay.is-visible {
+  display: flex;
+}
+
+.export-panel {
+  width: 100%;
+  max-width: 720px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--bg);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  padding: clamp(20px, 4vw, 32px);
+}
+
+.export-panel h3 {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-heading);
+  font-size: 0.95rem;
+  margin: 0;
+  color: var(--ink);
+}
+
+.export-panel p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+.export-textarea {
+  flex: 1;
+  min-height: 260px;
+  resize: vertical;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.export-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.export-actions button {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  padding: 0.6em 1.1em;
+  border-radius: 999px;
+  border: 1px solid var(--hairline);
+  color: var(--ink);
+  background: var(--bg);
+  transition: border-color 200ms ease, color 200ms ease;
+}
+
+.export-actions button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.export-actions button.primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.export-actions button.primary:hover {
+  color: var(--accent-ink);
+  opacity: 0.9;
+}
+
+@media (max-width: 860px) {
+  /* keep clear of the bottom nav arrows, which share this corner on mobile */
+  .edit-toggle {
+    bottom: 104px;
+  }
+  .edit-bar {
+    bottom: 150px;
+  }
+  .edit-saved-badge {
+    bottom: 104px;
+  }
+}
