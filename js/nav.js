@@ -2,7 +2,7 @@
   "use strict";
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const SWOOSH_MS = reducedMotion ? 50 : 700;
+  const SWOOSH_MS = reducedMotion ? 50 : 850;
 
   const views = Array.from(document.querySelectorAll(".view"));
   const backBtn = document.querySelector(".nav-arrow--back");
