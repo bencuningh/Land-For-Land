@@ -33,12 +33,8 @@
     backBtn.tabIndex = cfg.showBack ? 0 : -1;
     forwardBtn.tabIndex = cfg.showForward ? 0 : -1;
 
-    if (cfg.progress) {
-      progressEl.textContent = cfg.progress;
-      progressEl.classList.add("is-visible");
-    } else {
-      progressEl.classList.remove("is-visible");
-    }
+    progressEl.textContent = cfg.progress;
+    progressEl.classList.toggle("is-visible", Boolean(cfg.progress));
 
     markEl.classList.toggle("is-visible", cfg.mark);
   }
